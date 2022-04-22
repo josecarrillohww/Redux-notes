@@ -120,3 +120,20 @@ const policies = ( listOfPolicies = [], action ) => {
   
   store.getState()
 ```
+
+The store is an object that looks like this:
+
+```JSON
+{
+  "accounting": 55,
+  "claimHistory": [
+    {"name": "Alex", "amountOfMoneyToCollect": 20}
+  ]
+  "policies": [
+    "Alex",
+    "John"
+  ]
+}
+```
+
+A full example of this code can be found here: https://codepen.io/sgrider/pres/oQjBvG?editors=1111
