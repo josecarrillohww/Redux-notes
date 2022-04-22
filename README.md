@@ -102,9 +102,21 @@ const policies = ( listOfPolicies = [], action ) => {
   
   const store = createStore(ourDepartments)
   
-  const action = createPolicy('Alex', 20)
+  // In our analogy, dispatch is the guy who grab copies of the forms (actions) and take them to each department
   
-  store.dispatch(action)
+  store.dispatch(createPolicy('Alex', 20)) // Alex pays $20
+  store.dispatch(createPolicy('John', 30))
+  store.dispatch(createPolicy('Bob', 25))
+  
+  // Now we have $175 in our money bag, remember we had $100 as initial state
+  
+  store.dispatch(createClaim('Alex', 120)  // Alex is claiming $120, so this amount will be substracted from money bag
+  
+  // Now we have $55 in our money bag
+  
+  store.dispatch(deletePolicy('Bob')) // We have the policy of the client named Bob
+  
+  // Finally, the state is like our document centralized repository, where we stored the data of claims, accounting and policies
   
   store.getState()
 ```
